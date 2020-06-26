@@ -5,10 +5,13 @@ import {
     CrudGetListSuccessAction,
     CrudGetOneSuccessAction,
     CRUD_CREATE_SUCCESS,
+    CRUD_DELETE_SUCCESS,
     CrudCreateSuccessAction,
 } from '../../../../actions';
 import { DELETE, DELETE_MANY } from '../../../../core';
 import { Identifier } from '../../../../types';
+// MODIF JB
+import {CrudDeleteSuccessAction} from "../../../../../lib/actions/dataActions";
 
 type IdentifierArray = Identifier[];
 
@@ -16,6 +19,8 @@ type ActionTypes =
     | CrudGetListSuccessAction
     | CrudGetOneSuccessAction
     | CrudCreateSuccessAction
+    // MODIF JB
+    | CrudDeleteSuccessAction
     | {
           type: 'OTHER_ACTION';
           payload: any;
@@ -62,9 +67,8 @@ const idsReducer: Reducer<IdentifierArray> = (
 
     switch (action.type) {
         // modif JB
-        case CRUD_DELETE_SUCCESS: {
+        case CRUD_DELETE_SUCCESS:
             return previousState.filter((id) => (action as CrudDeleteSuccessAction).requestPayload.id !== id)
-        }
         // end modif JB
         case CRUD_GET_LIST_SUCCESS:
             return action.payload.data.map(({ id }) => id);
