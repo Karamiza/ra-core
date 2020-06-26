@@ -6,12 +6,12 @@ import {
     CrudGetOneSuccessAction,
     CRUD_CREATE_SUCCESS,
     CRUD_DELETE_SUCCESS,
-    CrudCreateSuccessAction,
+    CrudCreateSuccessAction, CrudDeleteSuccessAction,
 } from '../../../../actions';
 import { DELETE, DELETE_MANY } from '../../../../core';
 import { Identifier } from '../../../../types';
-// MODIF JB
-import {CrudDeleteSuccessAction} from "../../../../../lib/actions/dataActions";
+
+
 
 type IdentifierArray = Identifier[];
 

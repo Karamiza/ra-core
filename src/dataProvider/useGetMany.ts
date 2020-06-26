@@ -98,8 +98,10 @@ const useGetMany = (
             ids.length === 0 ||
             (data.length !== 0 && !data.includes(undefined)),
     });
+    // @ts-ignore
     if (!isEqual(state.data, data)) {
         setState({
+            // @ts-ignore
             ...state,
             data,
             loaded: true,
@@ -133,7 +135,7 @@ const useGetMany = (
         callQueries(); // debounced by lodash
     }, [JSON.stringify({ resource, ids, options }), dataProvider]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    return state;
+    return <UseGetManyResult>state;
 };
 
 /**

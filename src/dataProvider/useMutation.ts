@@ -187,7 +187,7 @@ const useMutation = (
         /* eslint-enable react-hooks/exhaustive-deps */
     );
 
-    return [mutate, state];
+    return [mutate, state as any];
 };
 
 export interface Mutation {

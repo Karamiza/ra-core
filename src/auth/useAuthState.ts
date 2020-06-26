@@ -64,7 +64,7 @@ const useAuthState = (params: any = emptyParams): State => {
                 setState({ loading: false, loaded: true, authenticated: false })
             );
     }, [checkAuth, params, setState]);
-    return state;
+    return state as State;
 };
 
 export default useAuthState;
