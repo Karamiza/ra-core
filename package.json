@@ -21,7 +21,7 @@
     "bugs": "https://github.com/marmelab/react-admin/issues",
     "license": "MIT",
     "scripts": {
-        "build": "yarn run build-cjs && yarn run build-esm",
+        "build": "npm run build-cjs && npm run build-esm",
         "build-cjs": "rimraf ./lib && tsc",
         "build-esm": "rimraf ./esm && tsc --outDir esm --module es2015",
         "watch": "tsc --outDir esm --module es2015 --watch"
@@ -48,6 +48,7 @@
         "react-redux": "^7.1.0",
         "react-router": "^5.1.0",
         "react-router-dom": "^5.1.0",
+        "react-scripts": "^3.4.1",
         "react-test-renderer": "^16.9.0",
         "redux": "^3.7.2 || ^4.0.3",
         "redux-saga": "^1.0.0",
@@ -75,6 +76,7 @@
         "prop-types": "^15.6.1",
         "query-string": "^5.1.1",
         "recompose": "~0.26.0",
-        "reselect": "~3.0.0"
+        "reselect": "~3.0.0",
+        "typescript": "^3.9.5"
     }
 }
