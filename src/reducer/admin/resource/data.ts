@@ -176,7 +176,7 @@ const dataReducer: Reducer<RecordSetWithDate> = (
             return addRecordsAndRemoveOutdated(updatedRecords, previousState);
         }
         if (meta.fetch === DELETE) {
-            return removeRecords([requestPayload.id], previousState);
+            return removeRecords([payload.id], previousState);
         }
         if (meta.fetch === DELETE_MANY) {
             return removeRecords(payload.ids, previousState);
